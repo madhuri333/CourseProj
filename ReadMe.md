@@ -2,11 +2,12 @@
 
 There are **three** files in this Repository:
  
-* run_analysis.R
-* Codebook.rmd
-* ReadMe.md (currently open)  
+1. run_analysis.R  
 
-- In run_analysis.R, R code for the whole process of extracting and cleaning the data is present.   
+2. Codebook.rmd
+3. ReadMe.md (currently open)  
+
+- In run_analysis.R, R code for the whole process of extracting and cleaning the data is present  
 - Full description of measurement variables can be found in Codebook.rmd  
 - This ReadMe.md file describes my methods and assumptions in attempting the project. It also describes the process to run the code and access the resulting data.  
 
