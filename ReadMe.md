@@ -65,7 +65,7 @@ MxName is the measurement name.
 
   
 ####Requirements:  
-1. Original version of Samsung Data (as given in the project question statement) should be downloaded in your R working directory  
+1. Original version of Samsung Data (as given in the project question statement) should be downloaded and unzipped in your R working directory   
 
 2. run_analysis.R should be downloaded in your R working directory  
 

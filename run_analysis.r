@@ -4,15 +4,15 @@ library(dplyr)
 library(tidyr)
 
 # Read the data
-SubjTrainTxt <- read.table("./train/subject_train.txt", header=FALSE, colClasses = "numeric", comment.char = "")
-XTrainTxt <- read.table("./train/X_train.txt", header=FALSE, colClasses = "numeric", comment.char = "")
-YTrainTxt <- read.table("./train/y_train.txt", header=FALSE, colClasses = "numeric", comment.char = "")
+SubjTrainTxt <- read.table("./UCI HAR Dataset/train/subject_train.txt", header=FALSE, colClasses = "numeric", comment.char = "")
+XTrainTxt <- read.table("./UCI HAR Dataset/train/X_train.txt", header=FALSE, colClasses = "numeric", comment.char = "")
+YTrainTxt <- read.table("./UCI HAR Dataset/train/y_train.txt", header=FALSE, colClasses = "numeric", comment.char = "")
 
-SubjTestTxt <- read.table("./test/subject_test.txt", header=FALSE, colClasses = "numeric", comment.char = "")
-XTestTxt <- read.table("./test/x_test.txt", header=FALSE, colClasses = "numeric", comment.char = "")
-YTestTxt <- read.table("./test/y_test.txt", header=FALSE, colClasses = "numeric", comment.char = "")
+SubjTestTxt <- read.table("./UCI HAR Dataset/test/subject_test.txt", header=FALSE, colClasses = "numeric", comment.char = "")
+XTestTxt <- read.table("./UCI HAR Dataset/test/x_test.txt", header=FALSE, colClasses = "numeric", comment.char = "")
+YTestTxt <- read.table("./UCI HAR Dataset/test/y_test.txt", header=FALSE, colClasses = "numeric", comment.char = "")
 
-fileName <- "./features.txt"
+fileName <- "./UCI HAR Dataset/features.txt"
 con <- file(fileName, open="r")
 featuresTxt <- readLines(con)
 close(con)
@@ -33,8 +33,8 @@ XtxtStd <- XTxt[ , grepl("std",featuresTxt)]
 subsetData <- cbind(SubjTxt, YTxt, XtxtMean, XtxtStd) 
 rm(XTxt, XtxtMean, XtxtStd, YTxt, SubjTxt, featuresTxt, fileName)
 
-# Put activity name in ActivityName Column
-activity <- read.table("./activity_labels.txt")
+# Put activity label in ActivityLabel Column
+activity <- read.table("./UCI HAR Dataset/activity_labels.txt")
 activity <- as.data.table(activity)
 colnames(activity) <- c("ActivityLabel", "ActivityName")
 subsetData <- as.data.table(subsetData)
