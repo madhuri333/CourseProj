@@ -33,7 +33,7 @@ XtxtStd <- XTxt[ , grepl("std",featuresTxt)]
 subsetData <- cbind(SubjTxt, YTxt, XtxtMean, XtxtStd) 
 rm(XTxt, XtxtMean, XtxtStd, YTxt, SubjTxt, featuresTxt, fileName)
 
-# Put activity label in ActivityLabel Column
+# Put activity name in ActivityName Column
 activity <- read.table("./activity_labels.txt")
 activity <- as.data.table(activity)
 colnames(activity) <- c("ActivityLabel", "ActivityName")
