@@ -30,7 +30,7 @@ I have divided my project task in the following sub-goals/steps:
 ##The Assumptions  
 After going through the following paper:  
 
-     [Hadley's Paper](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)  
+[Hadley's Paper](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)  
 
 and various threads on discussion forums, I understood there is no one right answer. The idea is to execute the project according to our understanding and describe what we did. So here is what I did.  
 * Firstly, I read the data from relevant (x..., y..., subject... .txt files in test and train folders) files using *read.table* command. I also read features.txt file to get the name of measurement variables.   
@@ -39,7 +39,7 @@ and various threads on discussion forums, I understood there is no one right ans
 * Next I removed unwanted columns from X_Txt (i.e. not having mean or std dev measurements) and combined these subset data tables column wise to get "subsetData" data table.   
 * Next step is to add the activity name from activity_labels.txt file. I did it by using setkey function in both data tables and merging them. Now I have two Activity columns - ActivityLabel and ActivityName. 
 * I am not deleting the numeric column ActivityLabel as I will be using it to sort the final data table.   
-* Now I calculated the mean for each activity for each subject.   
+* Now I calculated the mean for each activity for each subject.  
 * Next step is to gather the columns in rows and change their name. I removed the numeric portion in the prefix of their name. Rest I did not decompose the variable names since:     
      * Further decomposing variable names might cause confusion as it will lead to increase in number of columns for a single value like one column would be added for Time/Freq, another for Body/Gravity.  
 	 * Codebook is made to describe the meaning of each variable so this will be redundant in my opinion   
@@ -48,13 +48,13 @@ and various threads on discussion forums, I understood there is no one right ans
 
          [Assignment Guidelines](https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/)  
 
-* I sorted the data according to Subject, ActivityLabel. Then I removed the ActivityLabel column as ActivityName is sufficient to know the type of activity. The numeric form was just retained to sort.   
+* I sorted the data according to Subject, ActivityLabel. Then I removed the ActivityLabel column as ActivityName is sufficient to know the type of activity. The numeric form was just retained to sort. 
 * Meanwhile I keep removing the objects not required in further process.   
 * Final step is to write the data table in a text file - tidy_data.txt   
 
 For units of measurements I referred to the following link:  
 
-     [Measurement Units](http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.names)  
+[Measurement Units](http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.names)  
 
 and put them in the Codebook.rmd.   
 The data table I have created is the long form of tidy data. It has rows = 30(subjects)* 6(activities) * 79(measurements) = 14220 observations and 4 columns - Subject, ActivityName, MxName, Value.  
