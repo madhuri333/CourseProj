@@ -43,7 +43,7 @@ I have divided my project task in the following sub-goals/steps:
 ###Process:  
 Type:   
 
-    *source('./run_analysis.r')*  
+    source('./run_analysis.r')  
 
 Press Enter  
 
@@ -54,9 +54,11 @@ This will run the code.
 **Two** things:
   
 1. Generate a data table object named "tidyData" in your R workspace. You can view its content by either clicking on it or running the following command in console:  
+
     *View(tidyData)*  
 
 2. Create "tidy_data.txt" file in your R working directory. This text file can either be viewed by double clicking on it or it can be read back into R by the following command:  
+
     *dataFrmFile <- read.table("./tidy_data.txt", header = TRUE)*  
 	*View(dataFrmFile)*  
 
