@@ -7,9 +7,9 @@ There are **three** files in this Repository:
 2. Codebook.rmd  
 3. ReadMe.md (currently open)  
 
--In run_analysis.R, R code for the whole process of extracting and cleaning the data is present.   
--Full description of measurement variables can be found in Codebook.rmd  
--This ReadMe.md file describes my methods and assumptions in attempting the project. It also describes the process to run the code and access the resulting data.  
+- In run_analysis.R, R code for the whole process of extracting and cleaning the data is present.   
+- Full description of measurement variables can be found in Codebook.rmd  
+- This ReadMe.md file describes my methods and assumptions in attempting the project. It also describes the process to run the code and access the resulting data.  
 
 
 ##The Approach  
@@ -53,14 +53,18 @@ This will run the code.
 ###Result:  
 **Two** things:
   
-1. Generate a data table object named "tidyData" in your R workspace. You can view its content by either clicking on it or running the following command in console:  
+1. Generate a data table object named "tidyData" in your R workspace. You can view its content by either clicking on it or running the following command in console:   
 
-    *View(tidyData)*  
+````
+    View(tidyData)   
+````   
 
 2. Create "tidy_data.txt" file in your R working directory. This text file can either be viewed by double clicking on it or it can be read back into R by the following command:  
 
-    *dataFrmFile <- read.table("./tidy_data.txt", header = TRUE)*  
-	*View(dataFrmFile)*  
+````
+    dataFrmFile <- read.table("./tidy_data.txt", header = TRUE)  
+    View(dataFrmFile)*  
+````
 
 To fully understand the meaning of each observation, it is important to read the data in conjunction with Codebook.rmd file.   
 
