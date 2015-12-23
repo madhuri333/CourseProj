@@ -1,5 +1,4 @@
-#ReadMe for Course Project in Getting & Cleaning Data
-
+#ReadMe for Course Project
 
 There are **three** files in this Repository: 
  
@@ -35,7 +34,7 @@ I have divided my project task in the following sub-goals/steps:
 
   
 ###Requirements:  
-1. Unmodified Samsung Data (as given in the project question statement) should be downloaded in your R working directory  
+1. Original version of Samsung Data (as given in the project question statement) should be downloaded in your R working directory  
 
 2. run_analysis.R should be downloaded in your R working directory  
 
@@ -46,7 +45,6 @@ Type:
     source('./run_analysis.r')  
 
 Press Enter  
-
 This will run the code.  
 
   
