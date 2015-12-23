@@ -1,9 +1,9 @@
 #ReadMe for Course Project
 
-There are **three** files in this Repository: 
+There are **three** files in this Repository:
  
 1. run_analysis.R  
-2. Codebook.rmd
+2. Codebook.rmd  
 3. ReadMe.md (currently open)  
 
 - In run_analysis.R, R code for the whole process of extracting and cleaning the data is present.   
@@ -36,7 +36,6 @@ and various threads on discussion forums, I understood there is no one right ans
 * Then, I combined rows of "x_test.txt" and "x_train.txt to get one "X_Txt" data table. Followed similar process to obtain "Y_Txt" and "Subj_Txt".   
 * Later I assigned labels - "ActivityLabel" to "Y_Txt", "Subject" to "Subj_Txt" and labels from features.txt to "X_Txt"    
 * Next I removed unwanted columns from X_Txt (i.e. not having mean or std dev measurements) and combined these subset data tables column wise to get "subsetData" data table.   
-* Meanwhile I keep removing the objects not to required in further process.   
 * Next step is to add the activity name from activity_labels.txt file. I did it by using setkey function in both data tables and merging them. Now I have two Activity columns - ActivityLabel and ActivityName. 
 * I am not deleting the numeric column ActivityLabel as I will be using it to sort the final data table.   
 * Now I calculated the mean for each activity for each subject.   
@@ -47,6 +46,7 @@ following thread by a fellow student about it:
 
 
 * I sorted the data according to Subject, ActivityLabel. Then I removed the ActivityLabel column as ActivityName is sufficient to know the type of activity. The numeric form was just retained to sort.   
+* Meanwhile I keep removing the objects not required in further process.   
 * Final step is to write the data table in a text file - tidy_data.txt   
 
 For units of measurements I referred to the following link:  
