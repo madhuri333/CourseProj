@@ -2,8 +2,8 @@
 
 There are **three** files in this Repository:
  
-1. run_analysis.R  
-2. Codebook.rmd  
+1. run_analysis.R
+2. Codebook.rmd
 3. ReadMe.md (currently open)  
 
 - In run_analysis.R, R code for the whole process of extracting and cleaning the data is present.   
@@ -91,14 +91,3 @@ This will run the code.
 ````
 
 To fully understand the meaning of each observation, it is important to read the data in conjunction with Codebook.rmd file.   
-
-	
-
-	
-
-
-
-
-
-
-
