@@ -34,7 +34,7 @@ The units given are g’s for the accelerometer and rad/sec for the gyroscope an
 * timeBodyGyroscopeMagnitude-Mean() is Mean of time measurement of Magnitude of Body Gyroscope along X-axis.
 * timeBodyGyroscopeJerkMagnitude-Mean() is Mean of time measurement of Magnitude of Body Jerk Gyroscope along X-axis.  
  
-*The following are frequency domain measurements of corresponding to the above time domain measurements.*  
+_The following are frequency domain measurements of corresponding to the above time domain measurements._  
 
 * frequencyBodyAccelerometer-Mean()-X  
 * frequencyBodyAccelerometer-MeanFreq()-X
@@ -52,7 +52,7 @@ The units given are g’s for the accelerometer and rad/sec for the gyroscope an
 * frequencyBodyGyroscopeJerkMagnitude-MeanFreq()
 
 #Standard Deviation Measurements  
-*The following are Standard deviation of time and frequency domain  measurements (explained above)  
+_The following are Standard deviation of time and frequency domain  measurements (explained above)_  
 
 * timeBodyAccelerometer-SD()-X  
 * timeGravityAccelerometer-SD()-X  
@@ -72,12 +72,13 @@ The units given are g’s for the accelerometer and rad/sec for the gyroscope an
 * frequencyBodyGyroscopeMagnitude-SD()  
 * frequencyBodyGyroscopeJerkMagnitude-SD()  
 
-*The measurements mentioned to have been measured along X axis have also been measured along Y and Z axis  
+_The measurements mentioned to have been measured along X axis have also been measured along Y and Z axis_  
 
-The set of variables that were estimated from these signals are:
+The set of variables that were estimated from these signals are:  
 
-mean(): Mean value
+mean(): Mean value  
 SD(): Standard deviation  
+
 
 #Data Set Information:
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. 
