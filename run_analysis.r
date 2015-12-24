@@ -2,7 +2,7 @@
 library(data.table)
 library(dplyr)
 library(tidyr)
-
+# 
 # Read the data
 SubjTrainTxt <- read.table("./UCI HAR Dataset/train/subject_train.txt", header=FALSE, colClasses = "numeric", comment.char = "")
 XTrainTxt <- read.table("./UCI HAR Dataset/train/X_train.txt", header=FALSE, colClasses = "numeric", comment.char = "")
@@ -54,6 +54,14 @@ gatherCol <- gather(meanData, Mx, Value, -Subject, -ActivityName, -ActivityLabel
 sepRowNames <- separate(gatherCol, Mx, c("RowNo", "MxName"), sep=" ")
 sepRowNames$RowNo <- NULL # Removed the column having numeric prefix of measurement variable names
 tidyData <- arrange(sepRowNames, Subject, ActivityLabel)
+tidyData$MxName <- gsub("std", "SD", tidyData$MxName)   # to elminate "t" from std so that later t can be repl by time
+tidyData$MxName <- gsub("mean", "Mean", tidyData$MxName)
+tidyData$MxName <- gsub("^t", "time", tidyData$MxName)
+tidyData$MxName <- gsub("^f", "frequency", tidyData$MxName)
+tidyData$MxName <- gsub("Acc", "Accelerometer", tidyData$MxName)
+tidyData$MxName <- gsub("Gyro", "Gyroscope", tidyData$MxName)
+tidyData$MxName <- gsub("Mag", "Magnitude", tidyData$MxName)
+tidyData$MxName <- gsub("BodyBody", "Body", tidyData$MxName)
 tidyData$ActivityLabel <- NULL  # After sorting, delete the column storing activity label in numeric form
 rm(gatherCol, meanData, sepRowNames)
 

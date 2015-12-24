@@ -4,11 +4,11 @@ There are **three** files in this Repository:
  
 1. run_analysis.R  
 
-2. Codebook.rmd
+2. Codebook.md
 3. ReadMe.md (currently open)  
 
 - In run_analysis.R, R code for the whole process of extracting and cleaning the data is present  
-- Full description of measurement variables can be found in Codebook.rmd  
+- Full description of measurement variables can be found in Codebook.md  
 - This ReadMe.md file describes my methods and assumptions in attempting the project. It also describes the process to run the code and access the resulting data.  
 
 
@@ -21,7 +21,7 @@ I have divided my project task in the following sub-goals/steps:
 4. Remove the unwanted columns  
 5. Put activity name in ActivityName Column  
 6. Calculate mean of all measurement variables for each activity by an individual subject by Grouping the data according to Subject & Activity, then finding the mean  
-7. Convert to tidy data by gathering columns, descriptive variable names and sorting according to Subject and Activity  
+7. Convert to tidy data by gathering columns, using descriptive variable names and sorting according to Subject and Activity  
 8. Write the tidy data to tidy_data.txt  
 
 *The above steps have also been mentioned as comments in run_analysis.R file.*  
@@ -40,14 +40,18 @@ and various threads on discussion forums, I understood there is no one right ans
 * Next step is to add the activity name from activity_labels.txt file. I did it by using setkey function in both data tables and merging them. Now I have two Activity columns - ActivityLabel and ActivityName. 
 * I am not deleting the numeric column ActivityLabel as I will be using it to sort the final data table.   
 * Now I calculated the mean for each activity for each subject.  
-* Next step is to gather the columns in rows and change their name. I removed the numeric portion in the prefix of their name. Rest I did not decompose the variable names since:     
-     * Further decomposing variable names might cause confusion as it will lead to increase in number of columns for a single value like one column would be added for Time/Freq, another for Body/Gravity.  
-	 * Codebook is made to describe the meaning of each variable so this will be redundant in my opinion   
-     * These are specifications for each measurement and should be kept together.   
-	 * A fellow student also wrote about it:   
+* Next step is to gather the columns in rows and change their name. I removed the numeric portion in the prefix of their name. I further used substitution command to give the measurements more descriptive names.
+I did not break each measurement into further separate columns because:     
+     * Decomposing variable names in columns might introduce NAs and will not add value/ clarity to data in my opinion. A fellow student has also shared similar concerns about it:   
 
          [Assignment Guidelines](https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/)  
 
+	 * Codebook already has full description of each variable.   
+     * The project requires to find out mean of each measurement type which has been completed. Further breaking the name is not required.   
+	 * Community TA has also clarified the dimensions of tidy data set (Either 180*N by 4 or 180 by N) in the following thread in Discussion Forum:
+	 
+	     [Discussion Forum-CTA clarification](https://class.coursera.org/getdata-035/forum/thread?thread_id=94)
+	 
 * I sorted the data according to Subject, ActivityLabel. Then I removed the ActivityLabel column as ActivityName is sufficient to know the type of activity. The numeric form was just retained to sort. 
 * Meanwhile I keep removing the objects not required in further process.   
 * Final step is to write the data table in a text file - tidy_data.txt   
@@ -56,7 +60,7 @@ For units of measurements I referred to the following link:
 
 [Measurement Units](http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.names)  
 
-and put them in the Codebook.rmd.   
+and put them in the Codebook.md.   
 The data table I have created is the long form of tidy data. It has rows = 30(subjects)* 6(activities) * 79(measurements) = 14220 observations and 4 columns - Subject, ActivityName, MxName, Value.  
 MxName is the measurement name.  
  
