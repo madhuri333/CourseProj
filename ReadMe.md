@@ -2,7 +2,8 @@
 
 There are **three** files in this Repository:
  
-1. run_analysis.R  
+1. run_analysis.R 
+ 
 2. Codebook.md
 3. ReadMe.md (currently open)  
 
