@@ -3,7 +3,6 @@
 There are **three** files in this Repository:
  
 1. run_analysis.R  
-
 2. Codebook.md
 3. ReadMe.md (currently open)  
 
@@ -27,15 +26,16 @@ I have divided my project task in the following sub-goals/steps:
 *The above steps have also been mentioned as comments in run_analysis.R file.*  
 
   
-##The Assumptions  
+##The Assumptions
+
 After going through the following paper:  
 
 [Hadley's Paper](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)  
 
 and various threads on discussion forums, I understood there is no one right answer. The idea is to execute the project according to our understanding and describe what we did. So here is what I did.  
 * Firstly, I read the data from relevant (x..., y..., subject... .txt files in test and train folders) files using *read.table* command. I also read features.txt file to get the name of measurement variables.   
-* Then, I combined rows of "x_test.txt" and "x_train.txt to get one "X_Txt" data table. Followed similar process to obtain "Y_Txt" and "Subj_Txt".   
-* Later I assigned labels - "ActivityLabel" to "Y_Txt", "Subject" to "Subj_Txt" and labels from features.txt to "X_Txt"    
+* Then, I combined rows of "x-test.txt" and "x-train.txt to get one "X-Txt" data table. Followed similar process to obtain "Y_Txt" and "Subj-Txt".   
+* Later I assigned labels - "ActivityLabel" to "Y-Txt", "Subject" to "Subj-Txt" and labels from features.txt to "X_Txt"    
 * Next I removed unwanted columns from X_Txt (i.e. not having mean or std dev measurements) and combined these subset data tables column wise to get "subsetData" data table.   
 * Next step is to add the activity name from activity_labels.txt file. I did it by using setkey function in both data tables and merging them. Now I have two Activity columns - ActivityLabel and ActivityName. 
 * I am not deleting the numeric column ActivityLabel as I will be using it to sort the final data table.   
@@ -46,9 +46,9 @@ I did not break each measurement into further separate columns because:
 
          [Assignment Guidelines](https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/)  
 
-	 * Codebook already has full description of each variable.   
+     * Codebook already has full description of each variable.   
      * The project requires to find out mean of each measurement type which has been completed. Further breaking the name is not required.   
-	 * Community TA has also clarified the dimensions of tidy data set (Either 180*N by 4 or 180 by N) in the following thread in Discussion Forum:
+     * Community TA has also clarified the dimensions of tidy data set (Either 180*N by 4 or 180 by N) in the following thread in Discussion Forum:
 	 
 	     [Discussion Forum-CTA clarification](https://class.coursera.org/getdata-035/forum/thread?thread_id=94)
 	 
